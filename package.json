@@ -11,7 +11,6 @@
     "axios": "^0.19.0",
     "core-js": "^3.3.2",
     "vue": "^2.6.10",
-    "vue-easy-lightbox": "^0.7.0",
     "vue-gallery": "^2.0.1",
     "vue-infinite-loading": "^2.4.4",
     "vue-router": "^3.1.3"

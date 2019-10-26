@@ -7,14 +7,14 @@
         Loading...
       </p>
       <ul v-else class="image-card-grid">
-        <image-card
+        <card
           v-for="image in images"
           :key="image.id"
           :image="image"
           @click.native="() => showImg(images.indexOf(image))"
         />
       </ul>
-      <infinite-loading @infinite="infiniteHandler"></infinite-loading>
+      <loading @infinite="infiniteHandler"></loading>
     </div>
   </div>
 </template>
@@ -29,8 +29,8 @@ import ImageCard from '@/components/ImageCard.vue';
 export default {
   name: 'home',
   components: {
-    ImageCard,
-    InfiniteLoading,
+    card: ImageCard,
+    loading: InfiniteLoading,
     gallery: VueGallery,
   },
   data() {
@@ -43,18 +43,6 @@ export default {
       page: 1,
     };
   },
-  // created() {
-  //   this.loading = true;
-  //   this.fetchImages()
-  //     .then((response) => {
-  //       // eslint-disable-next-line array-callback-return
-  //       response.data.photos.photo.map((image) => { this.images.push(image.url_n); });
-  //       this.loading = false;
-  //     })
-  //     .catch((error) => {
-  //       console.log('An error ocurred: ', error);
-  //     });
-  // },
   methods: {
     fetchImages() {
       return axios({
